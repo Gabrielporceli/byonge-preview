@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Ícone "g" Byonge — bojo + descendente + folha-gota característica -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 160" role="img" aria-label="byonge">
+  <title>byonge</title>
+  <g transform="translate(8,12)">
+    <circle fill="currentColor" cx="48" cy="48" r="48"/>
+    <circle fill="#ffffff" cx="48" cy="48" r="22"/>
+    <path fill="currentColor" d="M 72 48 L 96 48 L 96 110 Q 96 138 70 142 L 40 146 L 38 122 L 60 118 Q 72 116 72 102 Z"/>
+    <path fill="#b9c66a" d="M 56 0 Q 38 6 26 22 Q 44 14 64 16 Q 78 18 86 12 Q 76 4 56 0 Z"/>
+    <path fill="#b9c66a" opacity="0.85" d="M 64 8 Q 70 4 78 6 L 76 18 Q 70 14 64 14 Z"/>
+  </g>
+</svg>
