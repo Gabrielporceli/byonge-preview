@@ -1,4 +1,4 @@
-import { FC, useState, FormEvent } from 'react';
+import { useState, type FC, type FormEvent } from 'react';
 import Reveal from './Reveal';
 
 const Contact: FC = () => {

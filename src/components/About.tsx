@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import type { FC } from 'react';
 import Reveal from './Reveal';
 
 const About: FC = () => {

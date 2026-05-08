@@ -1,4 +1,4 @@
-import { FC, useState, useEffect } from 'react';
+import { useState, useEffect, type FC } from 'react';
 
 const Navbar: FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);

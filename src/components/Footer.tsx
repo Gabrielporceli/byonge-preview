@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import type { FC } from 'react';
 
 const Footer: FC = () => {
   const currentYear = new Date().getFullYear();
