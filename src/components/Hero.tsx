@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { FC, useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 const slides = [
@@ -20,7 +20,7 @@ const slides = [
   }
 ];
 
-const Hero: React.FC = () => {
+const Hero: FC = () => {
   const [current, setCurrent] = useState(0);
 
   useEffect(() => {

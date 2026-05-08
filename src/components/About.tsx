@@ -1,7 +1,7 @@
-import React from 'react';
+import { FC } from 'react';
 import Reveal from './Reveal';
 
-const About: React.FC = () => {
+const About: FC = () => {
   return (
     <section className="section section-sobre" id="sobre">
       <div className="container two-col">

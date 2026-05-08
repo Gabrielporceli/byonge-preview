@@ -1,4 +1,4 @@
-import React from 'react';
+import { FC } from 'react';
 import Reveal from './Reveal';
 
 const newsItems = [
@@ -9,7 +9,7 @@ const newsItems = [
   { source: 'Instagram', title: 'Divulgação da parceria nas redes sociais', href: 'https://www.instagram.com/p/DNji-kfPnQc/' }
 ];
 
-const News: React.FC = () => {
+const News: FC = () => {
   return (
     <section className="section section-news" id="news">
       <div className="container news-grid">

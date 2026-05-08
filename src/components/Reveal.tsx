@@ -1,13 +1,13 @@
-import React from 'react';
+import { FC, ReactNode } from 'react';
 import { motion } from 'framer-motion';
 
 interface RevealProps {
-  children: React.ReactNode;
+  children: ReactNode;
   delayIndex?: number;
   className?: string;
 }
 
-const Reveal: React.FC<RevealProps> = ({ children, delayIndex = 0, className = "" }) => {
+const Reveal: FC<RevealProps> = ({ children, delayIndex = 0, className = "" }) => {
   return (
     <motion.div
       className={`reveal ${className}`}

@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import { FC, useState, FormEvent } from 'react';
 import Reveal from './Reveal';
 
-const Contact: React.FC = () => {
+const Contact: FC = () => {
   const [formState, setFormState] = useState({
     nome: '',
     email: '',
@@ -10,7 +10,7 @@ const Contact: React.FC = () => {
   });
   const [status, setStatus] = useState({ type: '', message: '' });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
     if (!formState.nome || !formState.email || !formState.assunto || !formState.mensagem) {
       setStatus({ type: 'error', message: 'Preencha todos os campos para enviar.' });

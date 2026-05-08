@@ -1,4 +1,4 @@
-import React from 'react';
+import { FC } from 'react';
 import Reveal from './Reveal';
 
 const researchEixos = [
@@ -8,7 +8,7 @@ const researchEixos = [
   { tag: '04', title: 'Análises farmacognósticas', text: 'Padronização e controle de qualidade de extratos vegetais.' }
 ];
 
-const Research: React.FC = () => {
+const Research: FC = () => {
   return (
     <section className="section section-pd" id="pd">
       <div className="pd-band">

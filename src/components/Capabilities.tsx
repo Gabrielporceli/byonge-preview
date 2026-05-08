@@ -1,4 +1,4 @@
-import React from 'react';
+import { FC } from 'react';
 import Reveal from './Reveal';
 
 const capabilities = [
@@ -49,7 +49,7 @@ const capabilities = [
   }
 ];
 
-const Capabilities: React.FC = () => {
+const Capabilities: FC = () => {
   return (
     <section className="section section-areas" id="capacidades">
       <div className="container">

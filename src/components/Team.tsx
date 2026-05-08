@@ -1,4 +1,4 @@
-import React from 'react';
+import { FC } from 'react';
 import Reveal from './Reveal';
 
 const teamMembers = [
@@ -8,7 +8,7 @@ const teamMembers = [
   { role: 'Regulatório & Parcerias', bio: 'Conformidade regulatória, propriedade intelectual e relações institucionais.' }
 ];
 
-const Team: React.FC = () => {
+const Team: FC = () => {
   return (
     <section className="section section-team" id="equipe">
       <div className="container">

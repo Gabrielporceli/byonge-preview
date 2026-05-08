@@ -1,6 +1,6 @@
-import React from 'react';
+import { FC } from 'react';
 
-const TaglineStrip: React.FC = () => {
+const TaglineStrip: FC = () => {
   return (
     <section className="tagline-strip">
       <div className="container">

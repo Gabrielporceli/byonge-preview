@@ -1,4 +1,4 @@
-import React from 'react';
+import { FC } from 'react';
 import Reveal from './Reveal';
 
 const pillars = [
@@ -24,7 +24,7 @@ const pillars = [
   }
 ];
 
-const Pillars: React.FC = () => {
+const Pillars: FC = () => {
   return (
     <section className="section pillars-section">
       <div className="container">
