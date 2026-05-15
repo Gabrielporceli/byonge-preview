@@ -1,45 +1,89 @@
-import type { FC } from 'react';
+import { useState, useLayoutEffect, useRef, type FC } from 'react';
+import { useTranslation } from 'react-i18next';
 import Reveal from './Reveal';
 
-const teamMembers = [
-  { role: 'Diretoria Científica', bio: 'Liderança técnica em pesquisa e desenvolvimento de fitofármacos.' },
-  { role: 'Cultivo & GACP', bio: 'Coordenação dos protocolos de cultivo controlado e fenotipagem.' },
-  { role: 'Química & Analytics', bio: 'Métodos verdes de extração e caracterização de canabinoides.' },
-  { role: 'Regulatório & Parcerias', bio: 'Conformidade regulatória, propriedade intelectual e relações institucionais.' }
-];
+const allMembers = ['scientific', 'martha', 'leonardo', 'vinicius'] as const;
+type MemberKey = typeof allMembers[number];
+
+const TeamMemberCard: FC<{ memberKey: MemberKey; delayIndex: number }> = ({ memberKey, delayIndex }) => {
+  const { t } = useTranslation();
+  const bioRef = useRef<HTMLParagraphElement>(null);
+  const [isExpanded, setIsExpanded] = useState(false);
+  const [hasOverflow, setHasOverflow] = useState(false);
+
+  const bio = t(`team.${memberKey}.bio`);
+
+  useLayoutEffect(() => {
+    setIsExpanded(false);
+  }, [bio]);
+
+  useLayoutEffect(() => {
+    if (bioRef.current && !isExpanded) {
+      setHasOverflow(bioRef.current.scrollHeight > bioRef.current.clientHeight);
+    }
+  }, [bio, isExpanded]);
+
+  return (
+    <Reveal delayIndex={delayIndex}>
+      <article className="team-card team-card--featured">
+        <div className="team-photo">
+          <img src={t(`team.${memberKey}.photo`)} alt={t(`team.${memberKey}.name`)} />
+        </div>
+        <h3>{t(`team.${memberKey}.name`)}</h3>
+        <p className="role">{t(`team.${memberKey}.role`)}</p>
+
+        <div className={`bio-wrapper${isExpanded ? '' : ' bio-wrapper--clamped'}`}>
+          <p ref={bioRef} className={`bio${isExpanded ? '' : ' bio--clamped'}`}>
+            {bio}
+          </p>
+        </div>
+
+        <div className="card-bottom">
+          {(hasOverflow || isExpanded) && (
+            <button className="read-more-btn" onClick={() => setIsExpanded(v => !v)}>
+              {isExpanded ? t('team.readLess') : t('team.readMore')}
+            </button>
+          )}
+          <a
+            href={t(`team.${memberKey}.lattes`)}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="lattes-link"
+          >
+            {t(`team.${memberKey}.lattesLabel`)} →
+          </a>
+        </div>
+      </article>
+    </Reveal>
+  );
+};
 
 const Team: FC = () => {
+  const { t } = useTranslation();
+
   return (
     <section className="section section-team" id="equipe">
       <div className="container">
         <div className="section-head">
           <Reveal delayIndex={0}>
-            <p className="eyebrow">Equipe</p>
-            <h2 className="section-title">As pessoas <span className="accent">por trás da ciência</span>.</h2>
-            <p className="section-sub">
-              Nossa equipe reúne pesquisadores, profissionais da indústria farmacêutica e
-              parceiros acadêmicos. Esta seção será atualizada com fotos e biografias
-              completas.
-            </p>
+            <p className="eyebrow">{t('team.eyebrow')}</p>
+            <h2
+              className="section-title"
+              dangerouslySetInnerHTML={{ __html: t('team.title') }}
+            />
+            <p className="section-sub">{t('team.sub')}</p>
           </Reveal>
         </div>
 
         <div className="team-grid">
-          {teamMembers.map((member, i) => (
-            <Reveal key={i} delayIndex={i}>
-              <article className="team-card">
-                <div className="avatar"><span>BY</span></div>
-                <h3>Em breve</h3>
-                <p className="role">{member.role}</p>
-                <p className="bio">{member.bio}</p>
-              </article>
-            </Reveal>
+          {allMembers.map((key, i) => (
+            <TeamMemberCard key={key} memberKey={key} delayIndex={i + 1} />
           ))}
         </div>
 
-        <Reveal delayIndex={4}>
+        <Reveal delayIndex={5}>
           <p className="team-note">
-            <span className="dot"></span> Conteúdo em construção · biografias completas no segundo semestre de 2026
+            <span className="dot"></span> {t('team.note')}
           </p>
         </Reveal>
       </div>

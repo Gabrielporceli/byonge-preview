@@ -1,6 +1,14 @@
 import { useState, useEffect, type FC } from 'react';
+import { useTranslation } from 'react-i18next';
+
+const LANGS = [
+  { code: 'pt', label: 'PT' },
+  { code: 'en', label: 'EN' },
+  { code: 'es', label: 'ES' },
+];
 
 const Navbar: FC = () => {
+  const { t, i18n } = useTranslation();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -13,18 +21,18 @@ const Navbar: FC = () => {
   }, []);
 
   const navLinks = [
-    { name: 'Sobre', href: '#sobre' },
-    { name: 'Capacidades', href: '#capacidades' },
-    { name: 'Equipe', href: '#equipe' },
-    { name: 'P&D', href: '#pd' },
-    { name: 'News', href: '#news' },
-    { name: 'Contato', href: '#contato' },
+    { name: t('nav.about'), href: '#sobre' },
+    { name: t('nav.capabilities'), href: '#capacidades' },
+    { name: t('nav.team'), href: '#equipe' },
+    { name: t('nav.rd'), href: '#pd' },
+    { name: t('nav.news'), href: '#news' },
+    { name: t('nav.contact'), href: '#contato' },
   ];
 
   return (
     <header className={`site-header ${isScrolled ? 'is-scrolled' : ''}`} id="siteHeader">
       <div className="container nav-shell">
-        <a href="#home" className="brand" aria-label="byonge — início">
+        <a href="#home" className="brand" aria-label="byonge, início">
           <img src="/logo-byonge-footer.png" alt="byonge" className="brand-logo" />
         </a>
 
@@ -36,13 +44,20 @@ const Navbar: FC = () => {
           ))}
         </nav>
 
-        <button 
-          className={`nav-toggle ${isMobileMenuOpen ? 'is-open' : ''}`} 
-          id="navToggle" 
-          aria-label={isMobileMenuOpen ? 'Fechar menu' : 'Abrir menu'}
-          aria-expanded={isMobileMenuOpen}
-          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-        >
+        <div className="lang-switcher">
+          {LANGS.map(({ code, label }) => (
+            <button
+              key={code}
+              className={`lang-btn ${i18n.language === code ? 'is-active' : ''}`}
+              onClick={() => i18n.changeLanguage(code)}
+              aria-label={`Switch language to ${label}`}
+            >
+              {label}
+            </button>
+          ))}
+        </div>
+
+        <button className="nav-toggle" id="navToggle" aria-label="Abrir menu" aria-expanded={isMobileMenuOpen}>
           <span></span><span></span><span></span>
         </button>
       </div>

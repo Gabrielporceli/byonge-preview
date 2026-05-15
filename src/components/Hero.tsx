@@ -1,5 +1,6 @@
 import { useState, useEffect, type FC } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 const slides = [
   {
@@ -21,6 +22,7 @@ const slides = [
 ];
 
 const Hero: FC = () => {
+  const { t } = useTranslation();
   const [current, setCurrent] = useState(0);
 
   useEffect(() => {
@@ -45,21 +47,18 @@ const Hero: FC = () => {
         </ul>
 
         <div className="hero-card">
-          <p className="hero-eyebrow">Farmacognosia · End-to-end</p>
-          <h1 className="hero-title">
-            Da planta à <em>molécula</em>,<br />
-            com rigor científico.
-          </h1>
-          <p className="hero-lede">
-            A <strong>BYONGE</strong> é uma empresa de pesquisa e desenvolvimento
-            que oferece capacidades <strong>end-to-end em farmacognosia</strong>:
-            do cultivo conforme <strong>GACP</strong> ao desenvolvimento de
-            formulações, com serviços analíticos e suporte regulatório para
-            parceiros farmacêuticos e de biotecnologia.
-          </p>
+          <p className="hero-eyebrow">{t('hero.eyebrow')}</p>
+          <h1
+            className="hero-title"
+            dangerouslySetInnerHTML={{ __html: t('hero.title') }}
+          />
+          <p
+            className="hero-lede"
+            dangerouslySetInnerHTML={{ __html: t('hero.lede') }}
+          />
           <div className="hero-ctas">
-            <a href="#capacidades" className="btn btn-primary">Nossas capacidades</a>
-            <a href="#sobre" className="btn btn-ghost">Sobre a Byonge</a>
+            <a href="#capacidades" className="btn btn-primary">{t('hero.cta1')}</a>
+            <a href="#sobre" className="btn btn-ghost">{t('hero.cta2')}</a>
           </div>
         </div>
 

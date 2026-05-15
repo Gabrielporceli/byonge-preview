@@ -1,4 +1,5 @@
 import type { FC } from 'react';
+import { useTranslation } from 'react-i18next';
 import Reveal from './Reveal';
 
 const newsItems = [
@@ -10,13 +11,18 @@ const newsItems = [
 ];
 
 const News: FC = () => {
+  const { t } = useTranslation();
+
   return (
     <section className="section section-news" id="news">
       <div className="container news-grid">
         <div className="news-col">
           <Reveal delayIndex={0}>
-            <p className="eyebrow">Latest News</p>
-            <h2 className="section-title">A parceria <span className="accent">na mídia</span>.</h2>
+            <p className="eyebrow">{t('news.eyebrow')}</p>
+            <h2
+              className="section-title"
+              dangerouslySetInnerHTML={{ __html: t('news.title') }}
+            />
           </Reveal>
           <ul className="news-list">
             {newsItems.map((news, i) => (
@@ -26,7 +32,7 @@ const News: FC = () => {
                     <span className="news-source">{news.source}</span>
                     <h3>{news.title}</h3>
                     <span className="news-cta">
-                      Ler matéria 
+                      {t('news.readMore')}
                       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" style={{ marginLeft: '6px' }}>
                         <path d="M7 17L17 7M9 7h8v8"/>
                       </svg>
@@ -40,7 +46,7 @@ const News: FC = () => {
 
         <aside className="event-col">
           <Reveal delayIndex={2}>
-            <p className="eyebrow">Upcoming</p>
+            <p className="eyebrow">{t('news.upcoming')}</p>
             <h2 className="section-title section-title--sm">Medical Cannabis Fair 2026.</h2>
             <article className="event-card">
               <div className="event-date">
@@ -48,13 +54,9 @@ const News: FC = () => {
                 <span className="event-day">21–23</span>
               </div>
               <div className="event-body">
-                <span className="event-tag">Patrocinador Bronze</span>
-                <h3>Apresentação oficial do CEIFMT</h3>
-                <p>
-                  A Byonge participa do evento como patrocinadora bronze para apresentar
-                  oficialmente o <strong>CEIFMT — Centro de Estudos e Farmacognosia do
-                  Mato Grosso</strong>.
-                </p>
+                <span className="event-tag">{t('news.eventTag')}</span>
+                <h3>{t('news.eventTitle')}</h3>
+                <p dangerouslySetInnerHTML={{ __html: t('news.eventText') }} />
               </div>
             </article>
           </Reveal>
