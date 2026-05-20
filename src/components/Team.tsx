@@ -2,7 +2,7 @@ import { useState, useLayoutEffect, useRef, type FC } from 'react';
 import { useTranslation } from 'react-i18next';
 import Reveal from './Reveal';
 
-const allMembers = ['scientific', 'martha', 'leonardo', 'vinicius'] as const;
+const allMembers = ['scientific', 'martha', 'nilza', 'anapaula', 'leonardo', 'vinicius', 'renan'] as const;
 type MemberKey = typeof allMembers[number];
 
 const TeamMemberCard: FC<{ memberKey: MemberKey; delayIndex: number }> = ({ memberKey, delayIndex }) => {
@@ -12,28 +12,44 @@ const TeamMemberCard: FC<{ memberKey: MemberKey; delayIndex: number }> = ({ memb
   const [hasOverflow, setHasOverflow] = useState(false);
 
   const bio = t(`team.${memberKey}.bio`);
+  const photoUrl = t(`team.${memberKey}.photo`);
 
   useLayoutEffect(() => {
     setIsExpanded(false);
-  }, [bio]);
-
-  useLayoutEffect(() => {
-    if (bioRef.current && !isExpanded) {
-      setHasOverflow(bioRef.current.scrollHeight > bioRef.current.clientHeight);
+    if (bioRef.current) {
+      setHasOverflow(bioRef.current.scrollHeight > 120);
     }
-  }, [bio, isExpanded]);
+  }, [bio]);
 
   return (
     <Reveal delayIndex={delayIndex}>
       <article className="team-card team-card--featured">
         <div className="team-photo">
-          <img src={t(`team.${memberKey}.photo`)} alt={t(`team.${memberKey}.name`)} />
+          {photoUrl ? (
+            <img src={photoUrl} alt={t(`team.${memberKey}.name`)} />
+          ) : (
+            <div className="team-photo-placeholder">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.5"
+                className="placeholder-icon"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z"
+                />
+              </svg>
+            </div>
+          )}
         </div>
         <h3>{t(`team.${memberKey}.name`)}</h3>
         <p className="role">{t(`team.${memberKey}.role`)}</p>
 
-        <div className={`bio-wrapper${isExpanded ? '' : ' bio-wrapper--clamped'}`}>
-          <p ref={bioRef} className={`bio${isExpanded ? '' : ' bio--clamped'}`}>
+        <div className={`bio-wrapper${(isExpanded || !hasOverflow) ? '' : ' bio-wrapper--clamped'}`}>
+          <p ref={bioRef} className={`bio${(isExpanded || !hasOverflow) ? '' : ' bio--clamped'}`}>
             {bio}
           </p>
         </div>
@@ -63,7 +79,8 @@ const Team: FC = () => {
 
   return (
     <section className="section section-team" id="equipe">
-      <div className="container">
+      <img src="/g-byonge.png" alt="" className="team-watermark" aria-hidden="true" />
+      <div className="container" style={{ position: 'relative', zIndex: 1 }}>
         <div className="section-head">
           <Reveal delayIndex={0}>
             <p className="eyebrow">{t('team.eyebrow')}</p>

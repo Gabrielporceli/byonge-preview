@@ -1,7 +1,11 @@
 import type { FC } from 'react';
 import { useTranslation } from 'react-i18next';
 
-const Footer: FC = () => {
+interface FooterProps {
+  onOpenPrivacy: () => void;
+}
+
+const Footer: FC<FooterProps> = ({ onOpenPrivacy }) => {
   const { t } = useTranslation();
   const currentYear = new Date().getFullYear();
 
@@ -39,9 +43,9 @@ const Footer: FC = () => {
           <p>© {currentYear} {t('footer.rights')}</p>
           <div className="footer-bottom-links">
             <p className="muted">{t('footer.previously')}</p>
-            <a href="/politica-de-privacidade.pdf" target="_blank" rel="noopener noreferrer" className="privacy-link">
+            <button onClick={(e) => { e.preventDefault(); onOpenPrivacy(); }} className="privacy-link-btn">
               {t('footer.privacy')}
-            </a>
+            </button>
           </div>
         </div>
       </div>

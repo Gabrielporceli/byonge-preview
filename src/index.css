@@ -99,7 +99,7 @@ p { margin: 0 0 1em; }
   align-items: center;
 }
 .brand-logo {
-  height: 38px;
+  height: 45px;
   width: auto;
   display: block;
   transition: transform .25s ease;
@@ -500,13 +500,33 @@ p { margin: 0 0 1em; }
 }
 
 /* ============== EQUIPE ============== */
-.section-team { background: var(--paper); }
+.section-team { 
+  background: var(--paper); 
+  position: relative;
+  overflow: hidden;
+}
+
+.team-watermark {
+  position: absolute;
+  bottom: -50px;
+  right: -280px;
+  width: 1200px;
+  opacity: 0.04;
+  pointer-events: none;
+  z-index: 0;
+  user-select: none;
+}
 
 .team-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 24px;
   margin-top: 8px;
+}
+.team-grid > .reveal {
+  flex: 0 0 calc(25% - 18px);
+  max-width: calc(25% - 18px);
 }
 .team-card {
   text-align: center;
@@ -557,6 +577,7 @@ p { margin: 0 0 1em; }
   line-height: 1.7;
   color: var(--ink-500);
   margin: 0;
+  white-space: pre-wrap;
 }
 .team-card--featured { border-top: 3px solid var(--green-300); }
 .bio--clamped {
@@ -585,6 +606,24 @@ p { margin: 0 0 1em; }
   object-position: center top;
   display: block;
   margin-bottom: 16px;
+}
+
+.team-photo-placeholder {
+  width: 100%;
+  height: 175px;
+  border-radius: var(--radius-sm);
+  background: var(--green-50);
+  border: 1px solid rgba(26, 31, 18, 0.06);
+  color: var(--green-800);
+  display: grid;
+  place-items: center;
+  margin-bottom: 16px;
+}
+
+.placeholder-icon {
+  width: 44px;
+  height: 44px;
+  opacity: 0.6;
 }
 
 .bio-wrapper {
@@ -1066,7 +1105,11 @@ p { margin: 0 0 1em; }
 
 /* ============== RESPONSIVO ============== */
 @media (max-width: 1024px) {
-  .areas-grid, .team-grid, .pillars-grid { grid-template-columns: repeat(2, 1fr); }
+  .areas-grid, .pillars-grid { grid-template-columns: repeat(2, 1fr); }
+  .team-grid > .reveal {
+    flex: 0 0 calc(50% - 12px);
+    max-width: calc(50% - 12px);
+  }
   .two-col { grid-template-columns: 1fr; gap: 40px; }
   .pd-grid { grid-template-columns: 1fr; gap: 40px; }
   .news-grid { grid-template-columns: 1fr; gap: 48px; }
@@ -1112,14 +1155,18 @@ p { margin: 0 0 1em; }
   .carousel-arrow { display: none; }
   .carousel-dots { bottom: 18px; }
 
-  .areas-grid, .team-grid, .pillars-grid, .footer-nav { grid-template-columns: 1fr 1fr; }
+  .areas-grid, .pillars-grid, .footer-nav { grid-template-columns: 1fr 1fr; }
   .pd-stats { grid-template-columns: 1fr 1fr; }
 
   .footer-bottom-inner { flex-direction: column; align-items: flex-start; }
 }
 
 @media (max-width: 480px) {
-  .areas-grid, .team-grid, .pillars-grid, .footer-nav { grid-template-columns: 1fr; }
+  .areas-grid, .pillars-grid, .footer-nav { grid-template-columns: 1fr; }
+  .team-grid > .reveal {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
   .event-card { grid-template-columns: 1fr; }
   .event-date { flex-direction: row; justify-content: center; gap: 10px; padding: 10px; }
   .news-list a { grid-template-columns: 1fr; }
@@ -1127,4 +1174,167 @@ p { margin: 0 0 1em; }
   .contact-list li { grid-template-columns: 1fr; gap: 4px; padding-bottom: 16px; }
   .pd-stats { grid-template-columns: 1fr; gap: 18px; }
   .stat-num { font-size: 36px; }
+}
+
+/* ============== MODAL POLÍTICA DE PRIVACIDADE ============== */
+.modal-root {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+}
+
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(13, 18, 8, 0.4);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  z-index: 101;
+}
+
+.modal-container {
+  position: fixed;
+  inset: 0;
+  z-index: 102;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  pointer-events: none;
+}
+
+.modal-content {
+  background: var(--paper);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  width: 100%;
+  max-width: 800px;
+  max-height: calc(100vh - 48px);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border: 1px solid rgba(26, 31, 18, 0.08);
+  border-top: 5px solid var(--green-800);
+  pointer-events: auto;
+}
+
+.modal-header {
+  padding: 24px 30px 20px;
+  border-bottom: 1px solid rgba(26, 31, 18, 0.06);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+}
+.modal-header h2 {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--green-800);
+  margin: 0;
+}
+.modal-subtitle {
+  font-size: 11px;
+  color: var(--ink-500);
+  margin: 4px 0 0;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.modal-close-btn {
+  background: transparent;
+  border: 0;
+  padding: 6px;
+  border-radius: 50%;
+  cursor: pointer;
+  color: var(--ink-500);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background .2s ease, color .2s ease;
+}
+.modal-close-btn:hover {
+  background: var(--green-50);
+  color: var(--green-800);
+}
+
+.modal-body {
+  padding: 30px;
+  overflow-y: auto;
+  flex: 1;
+}
+
+.privacy-rich-text {
+  font-family: var(--font-sans);
+}
+.privacy-rich-text p {
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--ink-700);
+  margin-bottom: 16px;
+}
+.privacy-rich-text section {
+  margin-top: 32px;
+}
+.privacy-rich-text section:first-of-type {
+  margin-top: 24px;
+}
+.privacy-rich-text h3 {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--green-800);
+  margin: 0 0 14px;
+  letter-spacing: 0.05em;
+}
+.privacy-rich-text h4 {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: var(--ink-900);
+  margin: 20px 0 10px;
+}
+.privacy-rich-text ul {
+  margin: 0 0 18px;
+  padding-left: 22px;
+}
+.privacy-rich-text li {
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--ink-700);
+  margin-bottom: 8px;
+}
+.privacy-rich-text li strong {
+  color: var(--ink-900);
+}
+.privacy-rich-text a {
+  color: var(--green-800);
+  text-decoration: underline;
+}
+.privacy-rich-text a:hover {
+  color: var(--green-700);
+}
+
+.modal-footer {
+  padding: 20px 30px;
+  border-top: 1px solid rgba(26, 31, 18, 0.06);
+  display: flex;
+  justify-content: flex-end;
+  background: var(--paper-2);
+}
+
+/* Alterar link da política de privacidade no footer */
+.privacy-link-btn {
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  font-family: inherit;
+  cursor: pointer;
+  font-size: 12px;
+  color: var(--ink-500);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  opacity: .7;
+  transition: opacity .2s ease, color .2s ease;
+}
+.privacy-link-btn:hover {
+  opacity: 1;
+  color: var(--green-700);
 }
