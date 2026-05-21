@@ -60,14 +60,6 @@ const TeamMemberCard: FC<{ memberKey: MemberKey; delayIndex: number }> = ({ memb
               {isExpanded ? t('team.readLess') : t('team.readMore')}
             </button>
           )}
-          <a
-            href={t(`team.${memberKey}.lattes`)}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="lattes-link"
-          >
-            {t(`team.${memberKey}.lattesLabel`)} →
-          </a>
         </div>
       </article>
     </Reveal>
