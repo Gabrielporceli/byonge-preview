@@ -565,12 +565,13 @@ p { margin: 0 0 1em; }
   color: var(--ink-900);
 }
 .team-card .role {
-  font-size: 12px;
-  letter-spacing: 0.14em;
+  font-size: 10px;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
   color: var(--green-700);
   margin: 0 0 10px;
   font-weight: 700;
+  white-space: nowrap;
 }
 .team-card .bio {
   font-size: 12px;

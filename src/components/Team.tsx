@@ -2,7 +2,7 @@ import { useState, useLayoutEffect, useRef, type FC } from 'react';
 import { useTranslation } from 'react-i18next';
 import Reveal from './Reveal';
 
-const allMembers = ['scientific', 'martha', 'nilza', 'anapaula', 'leonardo', 'vinicius', 'renan'] as const;
+const allMembers = ['scientific', 'martha', 'renan', 'nilza', 'anapaula', 'leonardo', 'vinicius', 'esneider', 'joao'] as const;
 type MemberKey = typeof allMembers[number];
 
 const TeamMemberCard: FC<{ memberKey: MemberKey; delayIndex: number }> = ({ memberKey, delayIndex }) => {

@@ -75,7 +75,7 @@ const pt = {
     renan: {
       name: 'Renan César Peres',
       photo: '/renan-peres.jpg',
-      role: 'Sócio & Advogado',
+      role: 'Conselho de administração',
       bio: 'Formação em direito na universidade municipal de São Caetano do Sul (uscs). Pós graduação em direito tributário na faculdade Damásio. Sócio Juri consultoria empresarial. Sócio/fundador César Peres e Luciano sociedade de advogados. Sócio/fundador cp cann.',
       lattes: 'https://buscatextual.cnpq.br/buscatextual/visualizacv.do',
       lattesLabel: 'Currículo Lattes',
@@ -83,7 +83,7 @@ const pt = {
     nilza: {
       name: 'Nilza Palhano',
       photo: '/nilza-palhano.jpg',
-      role: 'Sócia',
+      role: 'Conselho de administração',
       bio: 'Executiva com sólida trajetória em administração empresarial, com experiência diversificada em setores como agroindústria, pecuária e gestão corporativa. Especialista em gestão estratégica e financeira, alia visão analítica e foco em resultados à capacidade de liderar processos de transformação organizacional, com ênfase em melhoria contínua, eficiência operacional e custos.',
       lattes: 'https://buscatextual.cnpq.br/buscatextual/visualizacv.do',
       lattesLabel: 'Currículo Lattes',
@@ -91,10 +91,22 @@ const pt = {
     anapaula: {
       name: 'Ana Paula Palhano',
       photo: '/ana-paula-palhano.jpg',
-      role: 'Sócia',
+      role: 'Conselho de administração',
       bio: 'Gestora de Reestruturação Empresarial, com atuação no agronegócio, governança, processos, compliance e controle institucional. Atua na estruturação de empresas, organização interna, identificação de riscos e elevação do padrão corporativo, conectando operação, imagem e cultura organizacional.',
       lattes: 'https://buscatextual.cnpq.br/buscatextual/visualizacv.do',
       lattesLabel: 'Currículo Lattes',
+    },
+    esneider: {
+      name: 'Esneider Ibarra Pareja',
+      photo: '/Esneider Ibarra.jpeg',
+      role: 'Consultor GMP/GACP',
+      bio: 'Esneider Ibarra Pareja: Engenheiro Industrial com mais de 5 anos de experiência no setor de Cannabis, certificador e consultor em diretrizes internacionais GACP (EMA-OMS), GMP EU I, GMP EU II.',
+    },
+    joao: {
+      name: 'João Pedro Moreira',
+      photo: '/Joao Pedro Moreira.jpeg',
+      role: 'Pesquisador Científico',
+      bio: 'João Pedro Moreira é Farmacêutico Responsável Técnico em empresas de biotecnologia, atuando em assuntos regulatórios, importação de Cannabis, venda de medicamentos hospitalares. Atualmente, especializa-se em IA aplicada a assuntos regulatórios.',
     },
     note: 'Conteúdo em construção · biografias completas no segundo semestre de 2026',
     readMore: 'Ler mais',
@@ -104,7 +116,7 @@ const pt = {
   research: {
     eyebrow: 'Pesquisa, Desenvolvimento & Inovação',
     visitSite: 'Visitar site do CEIFMT',
-    title: "CEIFMT: <span class='accent-light'>Centro de Estudos e Farmacognosia</span> do Mato Grosso.",
+    title: "CEIFMT: <span class='accent-light'>Centro de estudos e Inovação em farmacognosia</span> do Mato Grosso.",
     lede: 'Um laboratório multiusuário em construção, fruto de uma <strong>Parceria Público-Privada</strong> entre a <strong>Byonge</strong> (à época, Fitocann), a <strong>Universidade Federal de Mato Grosso (UFMT)</strong> e a <strong>Fundação Uniselva</strong>.',
     lead: 'O CEIFMT será dedicado à pesquisa em <em>Cannabis sativa L.</em> e outras plantas medicinais, contemplando GACP, formulações, serviços analíticos e suporte regulatório, sob o marco regulatório brasileiro e em conformidade com requisitos de biossegurança.',
     statInstitutions: 'instituições<br>parceiras',
@@ -123,7 +135,7 @@ const pt = {
     upcoming: 'Em breve',
     eventTag: 'Patrocinador Bronze',
     eventTitle: 'Apresentação oficial do CEIFMT',
-    eventText: 'A Byonge participa do evento como patrocinadora bronze para apresentar oficialmente o <strong>CEIFMT: Centro de Estudos e Farmacognosia do Mato Grosso</strong>.',
+    eventText: 'A Byonge participa do evento como patrocinadora bronze para apresentar oficialmente o <strong>CEIFMT: Centro de estudos e Inovação em farmacognosia do Mato Grosso</strong>.',
   },
   contact: {
     eyebrow: 'Contato',

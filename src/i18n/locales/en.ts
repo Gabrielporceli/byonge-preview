@@ -75,7 +75,7 @@ const en = {
     renan: {
       name: 'Renan César Peres',
       photo: '/renan-peres.jpg',
-      role: 'Partner & Attorney',
+      role: 'Board of Directors',
       bio: 'Law degree from the Municipal University of São Caetano do Sul (USCS). Postgraduate degree in Tax Law from Damásio Faculty. Partner at Juri Corporate Consulting. Partner and founder of César Peres e Luciano Law Firm. Partner and founder of CP Cann.',
       lattes: 'https://buscatextual.cnpq.br/buscatextual/visualizacv.do',
       lattesLabel: 'Lattes CV',
@@ -83,7 +83,7 @@ const en = {
     nilza: {
       name: 'Nilza Palhano',
       photo: '/nilza-palhano.jpg',
-      role: 'Partner',
+      role: 'Board of Directors',
       bio: 'Executive with a solid trajectory in business administration, with diverse experience in sectors such as agribusiness, livestock, and corporate management. Specialist in strategic and financial management, combining analytical vision and focus on results with the ability to lead organizational transformation processes, emphasizing continuous improvement, operational efficiency, and cost control.',
       lattes: 'https://buscatextual.cnpq.br/buscatextual/visualizacv.do',
       lattesLabel: 'Lattes CV',
@@ -91,10 +91,22 @@ const en = {
     anapaula: {
       name: 'Ana Paula Palhano',
       photo: '/ana-paula-palhano.jpg',
-      role: 'Partner',
+      role: 'Board of Directors',
       bio: 'Business Restructuring Manager, with experience in agribusiness, governance, processes, compliance, and institutional control. Works in corporate structuring, internal organization, risk identification, and elevating corporate standards, connecting operation, image, and organizational culture.',
       lattes: 'https://buscatextual.cnpq.br/buscatextual/visualizacv.do',
       lattesLabel: 'Lattes CV',
+    },
+    esneider: {
+      name: 'Esneider Ibarra Pareja',
+      photo: '/Esneider Ibarra.jpeg',
+      role: 'GMP/GACP Consultant',
+      bio: 'Esneider Ibarra Pareja: Industrial Engineer with over 5 years of experience in the Cannabis sector, certifier and consultant in international guidelines GACP (EMA-WHO), EU GMP I, EU GMP II.',
+    },
+    joao: {
+      name: 'João Pedro Moreira',
+      photo: '/Joao Pedro Moreira.jpeg',
+      role: 'Scientific Researcher',
+      bio: 'João Pedro Moreira is a Technical Responsible Pharmacist in biotechnology companies, working in regulatory affairs, Cannabis importation, and sales of hospital medications. Currently, he specializes in AI applied to regulatory affairs.',
     },
     note: 'Content under construction · full biographies in the second half of 2026',
     readMore: 'Read more',
@@ -104,7 +116,7 @@ const en = {
   research: {
     eyebrow: 'Research, Development & Innovation',
     visitSite: 'Visit CEIFMT website',
-    title: "CEIFMT: <span class='accent-light'>Center for Studies and Phytopharmacology</span> of Mato Grosso.",
+    title: "CEIFMT: <span class='accent-light'>Center for Studies and Innovation in Pharmacognosy</span> of Mato Grosso.",
     lede: 'A multi-user laboratory under construction, the result of a <strong>Public-Private Partnership</strong> between <strong>Byonge</strong> (formerly Fitocann), the <strong>Federal University of Mato Grosso (UFMT)</strong>, and <strong>Fundação Uniselva</strong>.',
     lead: 'CEIFMT will be dedicated to research on <em>Cannabis sativa L.</em> and other medicinal plants, covering GACP, formulations, analytical services, and regulatory support, under the Brazilian regulatory framework and in compliance with biosafety requirements.',
     statInstitutions: 'partner<br>institutions',
@@ -123,7 +135,7 @@ const en = {
     upcoming: 'Upcoming',
     eventTag: 'Bronze Sponsor',
     eventTitle: 'Official presentation of CEIFMT',
-    eventText: 'Byonge participates in the event as a bronze sponsor to officially present the <strong>CEIFMT: Center for Studies and Phytopharmacology of Mato Grosso</strong>.',
+    eventText: 'Byonge participates in the event as a bronze sponsor to officially present the <strong>CEIFMT: Center for Studies and Innovation in Pharmacognosy of Mato Grosso</strong>.',
   },
   contact: {
     eyebrow: 'Contact',

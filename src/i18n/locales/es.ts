@@ -75,7 +75,7 @@ const es = {
     renan: {
       name: 'Renan César Peres',
       photo: '/renan-peres.jpg',
-      role: 'Socio & Abogado',
+      role: 'Consejo de Administración',
       bio: 'Graduado en Derecho por la Universidad Municipal de São Caetano do Sul (USCS). Posgrado en Derecho Tributario por la Facultad Damásio. Socio de Juri Consultoría Empresarial. Socio y fundador del bufete de abogados César Peres e Luciano. Socio y fundador de CP Cann.',
       lattes: 'https://buscatextual.cnpq.br/buscatextual/visualizacv.do',
       lattesLabel: 'Currículum Lattes',
@@ -83,7 +83,7 @@ const es = {
     nilza: {
       name: 'Nilza Palhano',
       photo: '/nilza-palhano.jpg',
-      role: 'Socia',
+      role: 'Consejo de Administración',
       bio: 'Ejecutiva con sólida trayectoria en administración empresarial, con experiencia diversificada en sectores como agroindustria, ganadería y gestión corporativa. Especialista en gestión estratégica y financiera, combina visión analítica y enfoque en resultados con la capacidad de liderar procesos de transformación organizacional, con énfasis en la mejora continua, eficiencia operativa y costos.',
       lattes: 'https://buscatextual.cnpq.br/buscatextual/visualizacv.do',
       lattesLabel: 'Currículum Lattes',
@@ -91,10 +91,22 @@ const es = {
     anapaula: {
       name: 'Ana Paula Palhano',
       photo: '/ana-paula-palhano.jpg',
-      role: 'Socia',
+      role: 'Consejo de Administración',
       bio: 'Gestora de Reestructuración Empresarial, con actuación en agronegocio, gobernanza, procesos, compliance y control institucional. Trabaja en la estructuración de empresas, organización interna, identificación de riesgos y elevación del estándar corporativo, conectando operación, imagen y cultura organizacional.',
       lattes: 'https://buscatextual.cnpq.br/buscatextual/visualizacv.do',
       lattesLabel: 'Currículum Lattes',
+    },
+    esneider: {
+      name: 'Esneider Ibarra Pareja',
+      photo: '/Esneider Ibarra.jpeg',
+      role: 'Consultor GMP/GACP',
+      bio: 'Esneider Ibarra Pareja: Ingeniero Industrial con más de 5 años de experiencia en el sector del Cannabis, certificador y consultor en directrices internacionales GACP (EMA-OMS), GMP EU I, GMP EU II.',
+    },
+    joao: {
+      name: 'João Pedro Moreira',
+      photo: '/Joao Pedro Moreira.jpeg',
+      role: 'Investigador Científico',
+      bio: 'João Pedro Moreira es Farmacéutico Responsable Técnico en empresas de biotecnología, actuando en asuntos regulatorios, importación de Cannabis, venta de medicamentos hospitalarios. Actualmente, se especializa en IA aplicada a asuntos regulatorios.',
     },
     note: 'Contenido en construcción · biografias completas en el segundo semestre de 2026',
     readMore: 'Leer más',
@@ -104,7 +116,7 @@ const es = {
   research: {
     eyebrow: 'Investigación, Desarrollo & Innovación',
     visitSite: 'Visitar sitio del CEIFMT',
-    title: "CEIFMT: <span class='accent-light'>Centro de Estudios y Farmacognosia</span> de Mato Grosso.",
+    title: "CEIFMT: <span class='accent-light'>Centro de Estudios e Innovación en Farmacognosia</span> de Mato Grosso.",
     lede: 'Un laboratorio multiusuario en construcción, fruto de una <strong>Alianza Público-Privada</strong> entre <strong>Byonge</strong> (entonces Fitocann), la <strong>Universidad Federal de Mato Grosso (UFMT)</strong> y la <strong>Fundação Uniselva</strong>.',
     lead: 'El CEIFMT estará dedicado a la investigación en <em>Cannabis sativa L.</em> y otras plantas medicinales, contemplando GACP, formulaciones, servicios analíticos y soporte regulatorio, bajo el marco regulatorio brasileño y en conformidad con los requisitos de bioseguridad.',
     statInstitutions: 'instituciones<br>socias',
@@ -123,7 +135,7 @@ const es = {
     upcoming: 'Próximo',
     eventTag: 'Patrocinador Bronce',
     eventTitle: 'Presentación oficial del CEIFMT',
-    eventText: 'Byonge participa del evento como patrocinadora bronce para presentar oficialmente el <strong>CEIFMT: Centro de Estudios y Farmacognosia de Mato Grosso</strong>.',
+    eventText: 'Byonge participa del evento como patrocinadora bronce para presentar oficialmente el <strong>CEIFMT: Centro de Estudios e Innovación en Farmacognosia de Mato Grosso</strong>.',
   },
   contact: {
     eyebrow: 'Contacto',
